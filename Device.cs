@@ -5,7 +5,7 @@ public class Device
     public Device(string name, string mac, uint ipv4, UInt128? ipv6)
     {
         Name = name;
-        MAC = mac;
+        Mac = mac;
         Ipv4 = ipv4;
         Ipv6 = ipv6;
     }
@@ -23,7 +23,7 @@ public class Device
         }
     }
 
-    public string MAC
+    public string Mac
     {
         get;
         private set;

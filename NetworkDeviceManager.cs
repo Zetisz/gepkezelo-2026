@@ -2,7 +2,7 @@
 
 namespace PetrikGepkezelo;
 
-public class DeviceManager: IEnumerable<Device>
+public class NetworkDeviceManager: IEnumerable<Device>
 {
     List<Device> devices = new();
 
