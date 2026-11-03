@@ -20,16 +20,23 @@ while(true)
                 byte[] ipv4Bytes = BitConverter.GetBytes(device.Ipv4);
                 var ipv4String = string.Format("{0}.{1}.{2}.{3}", ipv4Bytes[3], ipv4Bytes[2], ipv4Bytes[1], ipv4Bytes[3]);
 
-                byte[] ipv6Bytes = ((BigInteger)device.Ipv6).ToByteArray(isUnsigned: true);
                 var ipv6String = "";
-                for (int i = ipv6Bytes.Length - 1; i >= 0; i--)
+                if (device.Ipv6 != null)
                 {
-                    ipv6String += ipv6Bytes[i].ToString("X2");
-                    if (i % 2 == 1)
+                    byte[] ipv6Bytes = ((BigInteger)device.Ipv6).ToByteArray(isUnsigned: true);
+                    for (int i = ipv6Bytes.Length - 1; i >= 0; i--)
                     {
-                        ipv6String += ":";
+                        ipv6String += ipv6Bytes[i].ToString("X2");
+                        if (i % 2 == 1)
+                        {
+                            ipv6String += ":";
+                        }
                     }
+                } else
+                {
+                    ipv6String = "<none>";
                 }
+                
                 Console.WriteLine("{0}: {1} {2} {3}", device.Name, device.MAC, ipv4String, ipv6String);
             }
             break;
