@@ -11,7 +11,7 @@ namespace PetrikGepkezelo
         [Test]
         void TestLocalHost()
         {
-
+            
         }
     }
 }
