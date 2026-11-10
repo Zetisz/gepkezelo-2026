@@ -11,7 +11,8 @@ namespace PetrikGepkezelo
         [Test]
         void TestLocalHost()
         {
-            
+            var ipstring = NetworkDeviceManager.IPv4ToString();
+            Assert.That(ipstring);
         }
     }
 }
